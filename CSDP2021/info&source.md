@@ -11,12 +11,12 @@ Hosted by School of Cyber Security, University of Science and Technology of Chin
 
 ## Committee
 General Co-Chairs
-Jingqiang Lin, University of Science and Technology of China
-Juan Wang, Wuhan University, China
+- Jingqiang Lin, University of Science and Technology of China
+- Juan Wang, Wuhan University, China
 
 
 
 ## Organization Committee
-Bo Luo, the University of Kansas, USA
-Jun Shao, Zhejiang Gongshang University, China
-Shengzhi Zhang, Boston University Metropolitan College , USA
+- Bo Luo, the University of Kansas, USA
+- Jun Shao, Zhejiang Gongshang University, China
+- Shengzhi Zhang, Boston University Metropolitan College , USA

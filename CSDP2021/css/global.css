@@ -97,7 +97,7 @@ nav a:hover{
 }
 
 #content section, #content aside{
-  min-height:200px;
+  min-height:150px;
 }
 
 h1, h2, h3{
@@ -236,7 +236,7 @@ h1, h2, h3{
 #tips{
   margin:10px 0 10px 10px;
   padding-bottom:10px;
-  min-height:180px;
+  min-height:150px;
   font-family:Georgia;
 }
 #tips dl{
@@ -288,7 +288,7 @@ h1, h2, h3{
 #conferences{
   margin:10px 0 10px 10px;
   padding-bottom:10px;
-  min-height:180px;
+  min-height:150px;
   font-family:Georgia;
 }
 #conferences dl{
