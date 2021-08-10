@@ -16,7 +16,7 @@ body{
 #banner{
   min-height:80px;
   padding:10px 20px 5px 20px;
-  font-size:15pt;
+  font-size:16pt;
   color:#fefefd;
   background-color:#0793e7;
   background-image:url('../src/corner.jpg');
@@ -84,7 +84,7 @@ nav ul, nav ul li{
   border-right:1px solid white;
   font-family:Impact;
   font-weight:lighter;
-  font-size:15pt;
+  font-size:16pt;
 }
 nav a:hover{
   background:#00aeef;
@@ -148,12 +148,12 @@ h1, h2, h3{
   padding:0;
   margin:0;
   color:white;
-  font-size:15pt;
+  font-size:16pt;
 }
 .text{
   width:80%;
   margin:0 auto;
-  font-size:12pt;
+  font-size:15pt;
   border:solid 1px #00aeef;
   background:rgba(255,255,255,0.5);
 }
