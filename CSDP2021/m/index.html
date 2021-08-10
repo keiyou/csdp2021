@@ -1,415 +1,524 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<meta content="text/html; charset=utf-8" http-equiv="content-type" />
-<title>3rd International Workshop on Cyber Security and Data Privacy Aug. 19 - Aug. 20, 2021  Virtual  China</title>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+  <title>3rd International Workshop on Cyber Security and Data Privacy Aug. 19 - Aug. 20, 2021 Virtual China</title>
 
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<link rel="stylesheet" href="./jq/jquery.mobile-1.4.5.min.css" />
-<script src="jq/jq-min.js"></script>
-<script src="jq/jqm.js"></script>
-
-
-<script type="text/javascript">
-
-$(function() {
-  $('#nav').enhanceWithin().panel();
-
-  var page = $('body').find('div[data-role="page"]:not(.details)');
-  
-  for (let i=0; i<page.length-1; i++) {
-    $(page[i]).bind('swipeleft', function(e){
-	  e.preventDefault();
-	  $.mobile.changePage('#'+page[i+1].id, {transition:'slide'}, true)
-	})
-	//console.log(page[i].id+" => "+page[i+1].id);
-  }
-  for (let i=1; i<page.length; i++) {
-    $(page[i]).bind('swiperight', function(){
-	  $.mobile.changePage('#'+page[i-1].id, {transition:'slide', reverse:true}, true)
-	})
-	//console.log(page[i-1].id+" <= "+page[i].id);
-  }
-}); 
-
-  /* Pre-data */
-  var speaker_inf = [];
-  speaker_inf['Xinyi Huang'] = {
-    "bio":"<strong>黄欣沂</strong>，福建师范大学计算机与网络空间安全学院教授，博士生导师，长期从事公钥密码研究，研究工作获教育部自然科学奖一等奖（第3完成人）；担任中国密码学会理事、《中国科学：信息科学》青年编委，AsiaCCS2016等学术会议主席；入选教育部青年长江学者和福建省“百人计划”，主持国家自然科学基金优青项目和重点项目。",
-	"tit":"Towards Efficient Privacy-Preserving Inspection of TLS Encrypted Traffic",
-	"abs":"Network middleboxes perform deep packet inspection to detect anomalies and suspicious activities in network traffic. However, increasingly these traffic are encrypted and middleboxes can no longer make sense of them. This raises the problem of privacy-preserving inspection on TLS encrypted traffic. In this talk will first introduce the need for TLS traffic inspection and the problem with the existing approach. Three recent proposals, namely Blindbox, PrivDPI and Pine, will be then introduced. Finally, I will present conclusion and future direction."
-  };
-
-  speaker_inf['Yu Chen'] = {
-    "bio":"<strong>陈宇</strong>，山东大学网络空间安全学院教授, 博士生导师. 曾先后在中国科学院信息安全国家重点实验室和蚂蚁金服任职工作. 主要研究方向是理论密码学, 专注于基本密码组件、密码协议(零知识证明、多方安全计算)及其在隐私保护场景(如云计算和金融科技)中的落地应用. 近年以第1/通讯作者在密码学领域的国际高水平会议CRYPTO、ASIACRYPT、PKC、ESORICS、CT-RSA等上发表论文多篇. 主持国家自然科学基金青年项目(1项)、面上(1项)、 作为核心人员参与国家自然科学基金重点项目(1项). 2017年入选中科院青年创新促进会, 2018年获中国密码学会密码创新奖二等奖. 2020年获首届金融密码杯创新大赛团队一等奖、个人一等奖. ",
-	"tit":"Supervisable and Auditable Decentralized Confidential Payment System",
-	"abs":"In this talk, we report the construction of supervisable and auditable decentralized confidential payment (DCP) system. In addition to offering transaction confidentiality, SA-DCP supports secure supervision and privacy-preserving audit. We present a generic construction of SA-DCP system from integrated signature and encryption scheme and non-interactive zero-knowledge proof systems. We then instantiate our generic construction by carefully designing the underlying building blocks, yielding a standalone cryptocurrency called PGC. In PGC, the setup is transparent, transactions are less than 1.3KB and take under 38ms to generate and 15ms to verify.At the core of PGC is an additively homomorphic public-key encryption scheme that we introduce, twisted ElGamal, which is not only as secure as standard exponential ElGamal, but also friendly to Sigma protocols and range proofs. This enables us to easily devise zero-knowledge proofs for basic correctness of transactions as well as various application-dependent policies in a modular fashion. Moreover, it is very efficient. Compared with the most efficient reported implementation of Paillier PKE, twisted ElGamal is an order of magnitude better in key and ciphertext size and decryption speed (for small message space), two orders of magnitude better in encryption speed. We believe twisted ElGamal is of independent interest on its own right."
-  };
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="./jq/jquery.mobile-1.4.5.min.css" />
+  <script src="jq/jq-min.js"></script>
+  <script src="jq/jqm.js"></script>
 
 
-  speaker_inf['Shouling Ji'] = {
-    "bio":"<strong>纪守领</strong>，浙江大学“百人计划”研究员、博士生导师、浙江大学滨江研究院国产信创研究中心副主任，获佐治亚理工学院电子与计算机工程博士学位、佐治亚州立大学计算机科学博士学位，入选国家和省部级人才计划。主要研究方向为人工智能与安全、数据驱动安全、软件与系统安全和大数据分析，发表论文100余篇，包括IEEE S&P, USENIX Security, ACM CCS, KDD等CCF A类论文70余篇，研制的多个系统在大型平台上获得部署应用。获国家优秀留学生奖、8项最佳论文奖、浙江大学先进工作者等奖项。",
-	"tit":"Label Inference Attacks Against Vertical Federated Learning",
-	"abs":"As the initial variant of federated learning (FL), horizontal federated learning (HFL) applies to the situations where datasets share the same feature space but differ in the sample space, e.g., the collaboration between two regional banks, while trending vertical federated learning (VFL) deals with the cases where datasets share the same sample space but differ in the feature space, e.g., the collaboration between a bank and an e-commerce platform. Although various attacks have been proposed to evaluate the privacy risks of HFL, yet, few studies, if not none, have explored that for VFL. Considering that the typical application scenario of VFL is that a few participants (usually two) collaboratively train a machine learning (ML) model with features distributed among them but labels owned by only one of them, protecting the privacy of the labels owned by one participant should be a fundamental guarantee provided by VFL, as the labels might be highly sensitive, e.g., whether a person has a certain kind of disease. However, we discover that the bottom model structure and the gradient update mechanism of VFL can be exploited by a malicious participant to gain the power to infer the privately owned labels. Worse still, by abusing the bottom model, he/she can even infer labels beyond the training dataset. Based on our findings, we propose a set of novel label inference attacks against VFL. Our experiments show that the proposed attacks achieve an outstanding performance. We further share our insights and discuss possible defenses. Our research can shed light on the hidden privacy risks of VFL and pave the way for new research directions towards more secure VFL."
-  };
+  <script type="text/javascript">
+
+    $(function () {
+      $('#nav').enhanceWithin().panel();
+
+      var page = $('body').find('div[data-role="page"]:not(.details)');
+
+      for (let i = 0; i < page.length - 1; i++) {
+        $(page[i]).bind('swipeleft', function (e) {
+          e.preventDefault();
+          $.mobile.changePage('#' + page[i + 1].id, { transition: 'slide' }, true)
+        })
+        //console.log(page[i].id+" => "+page[i+1].id);
+      }
+      for (let i = 1; i < page.length; i++) {
+        $(page[i]).bind('swiperight', function () {
+          $.mobile.changePage('#' + page[i - 1].id, { transition: 'slide', reverse: true }, true)
+        })
+        //console.log(page[i-1].id+" <= "+page[i].id);
+      }
+    });
+
+    /* Pre-data */
+    var speaker_inf = [];
+    speaker_inf['Xinyi Huang'] = {
+      "bio": "<strong>黄欣沂</strong>，福建师范大学计算机与网络空间安全学院教授，博士生导师，长期从事公钥密码研究，研究工作获教育部自然科学奖一等奖（第3完成人）；担任中国密码学会理事、《中国科学：信息科学》青年编委，AsiaCCS2016等学术会议主席；入选教育部青年长江学者和福建省“百人计划”，主持国家自然科学基金优青项目和重点项目。",
+      "tit": "Towards Efficient Privacy-Preserving Inspection of TLS Encrypted Traffic",
+      "abs": "Network middleboxes perform deep packet inspection to detect anomalies and suspicious activities in network traffic. However, increasingly these traffic are encrypted and middleboxes can no longer make sense of them. This raises the problem of privacy-preserving inspection on TLS encrypted traffic. In this talk will first introduce the need for TLS traffic inspection and the problem with the existing approach. Three recent proposals, namely Blindbox, PrivDPI and Pine, will be then introduced. Finally, I will present conclusion and future direction."
+    };
+
+    speaker_inf['Yu Chen'] = {
+      "bio": "<strong>陈宇</strong>，山东大学网络空间安全学院教授, 博士生导师. 曾先后在中国科学院信息安全国家重点实验室和蚂蚁金服任职工作. 主要研究方向是理论密码学, 专注于基本密码组件、密码协议(零知识证明、多方安全计算)及其在隐私保护场景(如云计算和金融科技)中的落地应用. 近年以第1/通讯作者在密码学领域的国际高水平会议CRYPTO、ASIACRYPT、PKC、ESORICS、CT-RSA等上发表论文多篇. 主持国家自然科学基金青年项目(1项)、面上(1项)、 作为核心人员参与国家自然科学基金重点项目(1项). 2017年入选中科院青年创新促进会, 2018年获中国密码学会密码创新奖二等奖. 2020年获首届金融密码杯创新大赛团队一等奖、个人一等奖. ",
+      "tit": "Supervisable and Auditable Decentralized Confidential Payment System",
+      "abs": "In this talk, we report the construction of supervisable and auditable decentralized confidential payment (DCP) system. In addition to offering transaction confidentiality, SA-DCP supports secure supervision and privacy-preserving audit. We present a generic construction of SA-DCP system from integrated signature and encryption scheme and non-interactive zero-knowledge proof systems. We then instantiate our generic construction by carefully designing the underlying building blocks, yielding a standalone cryptocurrency called PGC. In PGC, the setup is transparent, transactions are less than 1.3KB and take under 38ms to generate and 15ms to verify.At the core of PGC is an additively homomorphic public-key encryption scheme that we introduce, twisted ElGamal, which is not only as secure as standard exponential ElGamal, but also friendly to Sigma protocols and range proofs. This enables us to easily devise zero-knowledge proofs for basic correctness of transactions as well as various application-dependent policies in a modular fashion. Moreover, it is very efficient. Compared with the most efficient reported implementation of Paillier PKE, twisted ElGamal is an order of magnitude better in key and ciphertext size and decryption speed (for small message space), two orders of magnitude better in encryption speed. We believe twisted ElGamal is of independent interest on its own right."
+    };
 
 
-  speaker_inf['Fangyu Zheng'] = {
-    "bio":"<strong>郑昉昱</strong>，博士，助理研究员，中科院信工所引进优秀青年人才，长期从事密码高性能计算、密码应用、密码测评等领域技术研究工作，以第一/通信作者在TIFS、IPDPS等国内外知名会议/期刊累计发表20篇论文，主持国家重点研发计划子课题3项、国家自然科学基金项目1项，主持/参与10余项重要密码国家/行业标准制定，编写了《密码软件实现与密钥安全》《密码应用与安全性评估》两本专著。",
-	"tit":"基于GPU浮点数指令的密码实现技术",
-	"abs":"现代密码算法一般使用整数作为基础数据单元进行数学变换，特别是RSA、ECC等公钥密码算法直接依赖于大整数的运算。因此，绝大多数密码算法实现都是利用计算平台上已经提供的整型数指令以及相应的多精度指令扩展完成密码运算。但在一些计算平台上，情况可能存在变数，比如GPU。由于图形渲染和大规模科学计算的需要，GPU往往具备强于整型数指令数倍的浮点数计算性能，这也为密码算法实现带来了新的思路和契机。本次报告主要介绍基于浮点数指令的公钥密码实现框架，重点介绍如何克服浮点数指令本身的局限性，来逐步挖掘浮点数指令在密码实现中的最大可能。该项研究在Tesla P100、V100等平台上可达传统整型数实现的2-3倍，相关研究成果发表在TIFS、IPDPS、ISC等会议/期刊上。"
-  };
+    speaker_inf['Shouling Ji'] = {
+      "bio": "<strong>纪守领</strong>，浙江大学“百人计划”研究员、博士生导师、浙江大学滨江研究院国产信创研究中心副主任，获佐治亚理工学院电子与计算机工程博士学位、佐治亚州立大学计算机科学博士学位，入选国家和省部级人才计划。主要研究方向为人工智能与安全、数据驱动安全、软件与系统安全和大数据分析，发表论文100余篇，包括IEEE S&P, USENIX Security, ACM CCS, KDD等CCF A类论文70余篇，研制的多个系统在大型平台上获得部署应用。获国家优秀留学生奖、8项最佳论文奖、浙江大学先进工作者等奖项。",
+      "tit": "Label Inference Attacks Against Vertical Federated Learning",
+      "abs": "As the initial variant of federated learning (FL), horizontal federated learning (HFL) applies to the situations where datasets share the same feature space but differ in the sample space, e.g., the collaboration between two regional banks, while trending vertical federated learning (VFL) deals with the cases where datasets share the same sample space but differ in the feature space, e.g., the collaboration between a bank and an e-commerce platform. Although various attacks have been proposed to evaluate the privacy risks of HFL, yet, few studies, if not none, have explored that for VFL. Considering that the typical application scenario of VFL is that a few participants (usually two) collaboratively train a machine learning (ML) model with features distributed among them but labels owned by only one of them, protecting the privacy of the labels owned by one participant should be a fundamental guarantee provided by VFL, as the labels might be highly sensitive, e.g., whether a person has a certain kind of disease. However, we discover that the bottom model structure and the gradient update mechanism of VFL can be exploited by a malicious participant to gain the power to infer the privately owned labels. Worse still, by abusing the bottom model, he/she can even infer labels beyond the training dataset. Based on our findings, we propose a set of novel label inference attacks against VFL. Our experiments show that the proposed attacks achieve an outstanding performance. We further share our insights and discuss possible defenses. Our research can shed light on the hidden privacy risks of VFL and pave the way for new research directions towards more secure VFL."
+    };
 
 
-  speaker_inf['Ding Wang'] = {
-    "bio":"<strong>汪定</strong>，南开大学教授，博士生导师，密码科学与技术系主任，天津市网络与数据安全技术重点实验室副主任，研究方向为数字身份安全。近年来以第一作者（或通讯作者）在IEEE S&P、ACM CCS、USENIX Security、NDSS和IEEE TDSC、IEEE TIFS等国内外刊物发表论文60余篇，被引用3300余次，H-index为27。主持国家重点研发计划课题、国家自然科学基金、装备预研、国家某部社研等项目10余项。担任CCF《技术动态》编委，CCF推荐期刊WCMC、IJISP、《计算机科学》、《电子与信息学报》等7个国内外期刊的编委/执行编委，获教育部自然科学一等奖（排名第2）、天津市科技进步二等奖（排名第4）、北大优博、CCF优博、ACM中国优博。2019年入选南开大学“百青计划”, 2020年入选天津市青年科技优秀人才，2021年入选爱思唯尔“中国高被引学者”。",
-	"tit":"理解比特币脑钱包口令",
-	"abs":"脑钱包是一种简便的比特币存储方式，它允许用户利用可记忆的口令来创建比特币钱包。这样，用户避免了将比特币钱包的私钥存储在硬件或纸媒上。但是，这也带来自了新的安全性问题：攻击者可以通过扫描比特币区块链上公开的地址，对脑钱包实施离线口令攻击。为测量这一威胁程度，我们基于2011年到2021年破解的1760个脑钱包口令样本，对脑钱包口令进行了迄今为止最大规模的特征分析和安全性研究。结果显示， 2015年8月发生的脑钱包破解软件“brainflayer”开源事件对脑钱包造成了巨大的影响：脑钱包的使用频率下降，但脑钱包口令的平均强度有了显著提高。在2015年8月之前，脑钱包的口令强度与钱包内比特币的价值之间存在正相关性，此后这种关系便不复存在。在口令语义方面，脑钱包与其他类型金融账户（如网银）、以及非金融账户相比，没有显著的差异。不过，用户在设置金融账户口令时，更倾向于使用字母和数字相混合的长口令，较少使用单一的长数字串。最后，我们给出了关于如何设置脑钱包口令的若干建议。"
-  };
+    speaker_inf['Fangyu Zheng'] = {
+      "bio": "<strong>郑昉昱</strong>，博士，助理研究员，中科院信工所引进优秀青年人才，长期从事密码高性能计算、密码应用、密码测评等领域技术研究工作，以第一/通信作者在TIFS、IPDPS等国内外知名会议/期刊累计发表20篇论文，主持国家重点研发计划子课题3项、国家自然科学基金项目1项，主持/参与10余项重要密码国家/行业标准制定，编写了《密码软件实现与密钥安全》《密码应用与安全性评估》两本专著。",
+      "tit": "基于GPU浮点数指令的密码实现技术",
+      "abs": "现代密码算法一般使用整数作为基础数据单元进行数学变换，特别是RSA、ECC等公钥密码算法直接依赖于大整数的运算。因此，绝大多数密码算法实现都是利用计算平台上已经提供的整型数指令以及相应的多精度指令扩展完成密码运算。但在一些计算平台上，情况可能存在变数，比如GPU。由于图形渲染和大规模科学计算的需要，GPU往往具备强于整型数指令数倍的浮点数计算性能，这也为密码算法实现带来了新的思路和契机。本次报告主要介绍基于浮点数指令的公钥密码实现框架，重点介绍如何克服浮点数指令本身的局限性，来逐步挖掘浮点数指令在密码实现中的最大可能。该项研究在Tesla P100、V100等平台上可达传统整型数实现的2-3倍，相关研究成果发表在TIFS、IPDPS、ISC等会议/期刊上。"
+    };
 
-  speaker_inf['Le Guan'] = {
-    "bio":"<strong>Le Guan</strong> is an assistant professor at the department of computer science in the University of Georgia (UGA). Before joining UGA, he was a post-doctoral researcher at the Pennsylvania State University. He received a PhD from the Institute of Information Engineering, Chinese Academy of Science in 2015, and a BS degree from the University of Science and Technology of China in 2009. His research interests cover many topics in the system security field, including operating systems and mobile systems, with his current research interest focusing on protection techniques applied to low-cost microcontroller unit systems. He has published papers in top-tier system security venues such as IEEE S&P, NDSS, USENIX Security, as well as mobile computing venues such as MobiSys and SenSys. He is a recipient of the distinguished paper award of ACSAC 2107.",
-	"tit":"Challenges in Designing Dynamic Analysis Tools for Microcontroller-based Embedded Systems",
-	"abs":"Microcontroller units (MCUs) have become popular in recent years, driving a number of security- and safety- critical embedded applications, ranging from industrial automation, smart manufacturing, automotive, to health care and home security. However, these resource-constrained devices lack basic security mechanisms available in traditional architectures. This allows adversaries to easily exploit known or zero-day software vulnerabilities in them, endangering people’s lives, infrastructure safety and even national security. To safeguard these devices, a straightforward solution is to find and fix software bugs before they are deployed. Unfortunately, MCU firmware developers often only have access to rudimentary debugging and testing tools during development. In this talk, we will first discuss challenges in designing security-oriented dynamic analysis tools for MCU-based embedded systems. Then, we will introduce new mechanisms that cross the technical barriers imposed by the unique characteristics of MCU hardware and firmware, and how we leverage them to more efficiently find bugs in MCU firmware. "
-  };
-  
-  
-  function toSpeaker(name) {
-    let detail = speaker_inf[name];
-	$('#speaker_name').text(name);
-	$('#avatar').attr('alt',name);
-	$('#avatar').attr('src', '../src/avatar/'+name.replace(" ","")+'.jpeg')
-	$('#bio').html(detail.bio);
-	$('#title').html(detail.tit);
-	$('#abstract').html(detail.abs);
-	$.mobile.changePage('#speaker', {transition:'slide'}, true);
-  }
-</script>
 
-<style type="text/css">
-html, body{margin:0;padding:0;}
+    speaker_inf['Ding Wang'] = {
+      "bio": "<strong>汪定</strong>，南开大学教授，博士生导师，密码科学与技术系主任，天津市网络与数据安全技术重点实验室副主任，研究方向为数字身份安全。近年来以第一作者（或通讯作者）在IEEE S&P、ACM CCS、USENIX Security、NDSS和IEEE TDSC、IEEE TIFS等国内外刊物发表论文60余篇，被引用3300余次，H-index为27。主持国家重点研发计划课题、国家自然科学基金、装备预研、国家某部社研等项目10余项。担任CCF《技术动态》编委，CCF推荐期刊WCMC、IJISP、《计算机科学》、《电子与信息学报》等7个国内外期刊的编委/执行编委，获教育部自然科学一等奖（排名第2）、天津市科技进步二等奖（排名第4）、北大优博、CCF优博、ACM中国优博。2019年入选南开大学“百青计划”, 2020年入选天津市青年科技优秀人才，2021年入选爱思唯尔“中国高被引学者”。",
+      "tit": "理解比特币脑钱包口令",
+      "abs": "脑钱包是一种简便的比特币存储方式，它允许用户利用可记忆的口令来创建比特币钱包。这样，用户避免了将比特币钱包的私钥存储在硬件或纸媒上。但是，这也带来自了新的安全性问题：攻击者可以通过扫描比特币区块链上公开的地址，对脑钱包实施离线口令攻击。为测量这一威胁程度，我们基于2011年到2021年破解的1760个脑钱包口令样本，对脑钱包口令进行了迄今为止最大规模的特征分析和安全性研究。结果显示， 2015年8月发生的脑钱包破解软件“brainflayer”开源事件对脑钱包造成了巨大的影响：脑钱包的使用频率下降，但脑钱包口令的平均强度有了显著提高。在2015年8月之前，脑钱包的口令强度与钱包内比特币的价值之间存在正相关性，此后这种关系便不复存在。在口令语义方面，脑钱包与其他类型金融账户（如网银）、以及非金融账户相比，没有显著的差异。不过，用户在设置金融账户口令时，更倾向于使用字母和数字相混合的长口令，较少使用单一的长数字串。最后，我们给出了关于如何设置脑钱包口令的若干建议。"
+    };
 
-legend img{width:80px;}
 
-#nav.ui-panel {
-    width: 15em;
-}
-#nav.ui-panel-closed {
-    width: 0;
-}
+    speaker_inf['Le Guan'] = {
+      "bio": "<strong>Le Guan</strong> is an assistant professor at the department of computer science in the University of Georgia (UGA). Before joining UGA, he was a post-doctoral researcher at the Pennsylvania State University. He received a PhD from the Institute of Information Engineering, Chinese Academy of Science in 2015, and a BS degree from the University of Science and Technology of China in 2009. His research interests cover many topics in the system security field, including operating systems and mobile systems, with his current research interest focusing on protection techniques applied to low-cost microcontroller unit systems. He has published papers in top-tier system security venues such as IEEE S&P, NDSS, USENIX Security, as well as mobile computing venues such as MobiSys and SenSys. He is a recipient of the distinguished paper award of ACSAC 2107.",
+      "tit": "Challenges in Designing Dynamic Analysis Tools for Microcontroller-based Embedded Systems",
+      "abs": "Microcontroller units (MCUs) have become popular in recent years, driving a number of security- and safety- critical embedded applications, ranging from industrial automation, smart manufacturing, automotive, to health care and home security. However, these resource-constrained devices lack basic security mechanisms available in traditional architectures. This allows adversaries to easily exploit known or zero-day software vulnerabilities in them, endangering people’s lives, infrastructure safety and even national security. To safeguard these devices, a straightforward solution is to find and fix software bugs before they are deployed. Unfortunately, MCU firmware developers often only have access to rudimentary debugging and testing tools during development. In this talk, we will first discuss challenges in designing security-oriented dynamic analysis tools for MCU-based embedded systems. Then, we will introduce new mechanisms that cross the technical barriers imposed by the unique characteristics of MCU hardware and firmware, and how we leverage them to more efficiently find bugs in MCU firmware. "
+    };
 
-.ui-panel-position-left.ui-panel-display-reveal {
-    left: 0;
-}
+    speaker_inf['Hongxin Hu'] = {
+      "bio": "<strong>Hongxin Hu</strong> is an Associate Professor in the Department of Computer Science and Engineering at University at Buffalo, SUNY. He is a recipient of the NSF CAREER Award for 2019. His research spans security, privacy, networking, and machine learning. He has participated in multiple cross-university, cross-disciplinary projects funded by NSF. His research has also been funded by USDOT, Google, VMware, Amazon, Dell, etc. He has published over 100 refereed technical papers, many of which appeared in top-tier conferences such as CCS, USENIX Security, NDSS, SIGCOMM, ICML, and CHI, and well-recognized journals such as IEEE TIFS, IEEE TDSC, IEEE/ACM TON, and IEEE TKDE. He is the recipient of the Best Paper Awards from ACSAC 2020, IEEE ICC 2020, ACM SIGCSE 2018, and ACM CODASPY 2014. His research has won the First Place Award in ACM SIGCOMM 2018 SRC. His research has also been featured by the IEEE Special Technical Community on Social Networking and received 50+ press coverage including ACM TechNews, InformationWeek, Slashdot, etc.",
+      "tit": "Enforcing Safety and Security Policy with Real IoT Physical Interaction Discovery ",
+      "abs": "The Internet of Things (IoT) platforms bring significant convenience for increased home automation. Especially, these platforms provide many new features for managing multiple IoT devices to control their physical surroundings. However, these features also bring new safety and security challenges. For example, an attacker can manipulate IoT devices to launch attacks through unexpected physical interactions. Unfortunately, very little existing research investigates the physical interactions among IoT devices and their impacts on IoT safety and security. In this talk, I will present a novel dynamic safety and security policy enforcement system called IoTSafe, which can capture and manage real physical interactions considering contextual features on smart home platforms. "
+    };
 
-.ui-panel-content-wrap-position-left.ui-panel-content-wrap-open,
-.ui-panel-dismiss-position-left.ui-panel-dismiss-open {
-    left: 15em;
-    right: -15em;
-}
 
-.ui-panel-animate.ui-panel-content-wrap-position-left.ui-panel-content-wrap-open.ui-panel-content-wrap-display-reveal {
-    left: 0;
-    right: 0;
-    -webkit-transform: translate3d(15em,0,0);
-    -moz-transform: translate3d(15em,0,0);
-    transform: translate3d(15em,0,0);
-}
+    speaker_inf['Chao Zhang'] = {
+      "bio": "<strong>张超</strong>， 博士，清华大学副教授（博导），蓝莲花战队教练。获得清华大学学术新人奖、某海外人才计划、MIT TR35 China、求是杰出青年学者、中国科协青托等奖励和荣誉。主要研究软件和系统安全，在国际四大安全会议发表论文近20篇。提出了成体系的自动化漏洞挖掘、利用、防御方案，分别获得腾讯CSS安全探索论坛专业奖、突破奖、微软BlueHat竞赛特别提名奖；研发的自动攻防系统获得美国国防部DARPA CGC机器自动攻防竞赛初赛防御第一、决赛攻击第二。",
+      "tit": "自动化堆风水技术Maze",
+      "abs": "Microcontroller units (MCUs) have become popular in recent years, driving a number of security- and safety- critical embedded applications, ranging from industrial automation, smart manufacturing, automotive, to health care and home security. However, these resource-constrained devices lack basic security mechanisms available in traditional architectures. This allows adversaries to easily exploit known or zero-day software vulnerabilities in them, endangering people’s lives, infrastructure safety and even national security. To safeguard these devices, a straightforward solution is to find and fix software bugs before they are deployed. Unfortunately, MCU firmware developers often only have access to rudimentary debugging and testing tools during development. In this talk, we will first discuss challenges in designing security-oriented dynamic analysis tools for MCU-based embedded systems. Then, we will introduce new mechanisms that cross the technical barriers imposed by the unique characteristics of MCU hardware and firmware, and how we leverage them to more efficiently find bugs in MCU firmware. "
+    };
 
-/* Combined listview collapsible menu. */
-/* Unset negative margin bottom on the listviews. */
-#nav .ui-panel-inner > .ui-listview { margin-bottom: 0; }
-/* Unset top and bottom margin on collapsible set. */
-#nav .ui-collapsible-set { margin: 0; }
-/* The first collapsible contains the collapsible set. Make it fit exactly in the collapsible content. */
-#nav .ui-panel-inner > .ui-collapsible > .ui-collapsible-content { padding-top: 0; padding-bottom: 0;  border-bottom: none; }
-/* Remove border top if a collapsible comes after a listview. */
-#nav .ui-panel-inner  > .ui-collapsible > .ui-collapsible-heading .ui-btn,
-#nav .ui-collapsible.ui-first-child .ui-collapsible-heading .ui-btn { border-top: none; }
-/* Give the first collapsible heading the same padding, i.e. same height, as the list items. */
-#nav .ui-collapsible-heading .ui-btn-inner { padding: .7em 40px .7em 15px; }
-/* Give the other collapsible headings the same padding and font-size as the list divider. */
-#nav .ui-collapsible-set .ui-collapsible-heading .ui-btn-inner { padding: .5em 40px .5em 15px; font-size: 14px; }
-/* Styling of the close button in both panels. */
-.ui-panel-inner > .ui-listview .ui-first-child {
-    background: #eee;
-}
-/* Reveal menu shadow on top of the list items */
-.ui-panel-display-reveal {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
 
-.ui-panel-content-wrap-position-left {
-    -webkit-box-shadow: -5px 0px 5px rgba(0,0,0,.15);
-    -moz-box-shadow: -5px 0px 5px rgba(0,0,0,.15);
-    box-shadow: -5px 0px 5px rgba(0,0,0,.15);
-}
+    speaker_inf['Lingyun Ying'] = {
+      "bio": "<strong>应凌云</strong>，博士，奇安信集团星图实验室负责人。毕业于中国科学院研究生院信息安全国家重点实验室，主要从事恶意代码分析、网络攻击检测相关技术研究与产品研发工作，发表论文20多篇，出版合著2部，主持国家自然科学基金、国家发改委信息安全专项等各类国家级科研项目10多项，申请技术发明专利21项，参与国际标准提案2项、国家行业标准编制4项，先后荣获中国通信学会科学技术奖一等奖、北京市科学技术奖二等奖、中国电力技术发明奖三等奖等奖项荣誉。",
+      "tit": "基于软件空间测绘的软件供应链安全分析",
+      "abs": "随着软件供应链攻击案例不断发生，软件供应链安全日益受到重视，但如何分析、监测和保护复杂和漫长的软件供应链，目前学术界和工业界都还没有很好的方法。在本次报告中，我们将分享奇安信技术研究院在软件供应链安全研究和实践方面的探索。我们从软件制成品环节入手，以软件交付物为对象，提出了软件空间测绘的概念，通过软件静态和动态分析，持续构建了规模庞大的软件空间测绘数据库，通过代码特征、动态行为和数据关联，发现了多种不同平台系统和开发生态上的大量供应链安全相关问题。"
+    };
 
-.ui-panel.ui-panel-open {
-    position:fixed;
-}
-.ui-panel-inner {
-    position: absolute;
-    top: 1px;
-    left: 0;
-    right: 0;
-    bottom: 0px;
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
-}
 
-#committee ul li p{white-space:normal}
+    speaker_inf['Jun Xu'] = {
+      "bio": "<strong>Jun Xu </strong> is currently an Assistant Professor in the Department of Computer Science at Stevens Institute of Technology. He received his Ph.D. degree from Penn State University in 2018. His research focuses on software security and system security. His goal is to secure computing systems by neutralizing the risk of vulnerabilities in the software stack. His research has discovered hundreds of software vulnerabilities and led to many papers published in top-tier computer security conferences, including IEEE S&P, ACM CCS, USENIX Security, and Blackhat. He is a recipient of CCS Outstanding Paper Award 2018, Penn State Alumni Dissertation Award, and RSAC Security Scholarship.",
+      "tit": "The Past, the Present, and the Future of Binary Analysis",
+      "abs": "Binary analysis is a foundational technique to improve the security of legacy code. Binary analysis consits of a broad spectrum of techniques, ranging from low-level disassembly to high level semantic understanding. It has also been applied to various security applications, such as vulnerability finding and malware analysis. In this talk, I will try to give an introductionary overview of binary analysis and its applications.I will explain the underlying techniques of binary analysis from different levels, followed by a summary of the main lines of applications in security.After that, I would like to share my thoughts about the remaining challenges of binary analysis, the new problems, and the future directions."
+    };
 
-#gallary img{width:100%;}
 
-#registration table th{
-  border:solid 1px white;
-  height:30px;
-  line-height:33px;
-  background-color: rgb(218, 231, 210);
-  text-align:center;
-}
+    function toSpeaker(name) {
+      let detail = speaker_inf[name];
+      $('#speaker_name').text(name);
+      $('#avatar').attr('alt', name);
+      $('#avatar').attr('src', '../src/avatar/' + name.replace(" ", "") + '.jpeg')
+      $('#bio').html(detail.bio);
+      $('#title').html(detail.tit);
+      $('#abstract').html(detail.abs);
+      $.mobile.changePage('#speaker', { transition: 'slide' }, true);
+    }
+  </script>
 
-#registration table td {
-  vertical-align:middle;
-}
+  <style type="text/css">
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
 
-#registration table ._col1{
-  background-color:rgb(215, 227, 238);
-  font-weight:bold;
-  text-align:center;
-}
+    legend img {
+      width: 80px;
+    }
 
-.nav-btn{
-    width: 18px !important;
-    height: 18px !important;
-	padding:9px;
-	border-radius:9px !important;
-}
+    #nav.ui-panel {
+      width: 15em;
+    }
 
-.nav-btn::after{
-    background-size: 75% !important;
-	margin-top:-10px;
-	margin-left:2px;
-}
+    #nav.ui-panel-closed {
+      width: 0;
+    }
 
-</style>
+    .ui-panel-position-left.ui-panel-display-reveal {
+      left: 0;
+    }
+
+    .ui-panel-content-wrap-position-left.ui-panel-content-wrap-open,
+    .ui-panel-dismiss-position-left.ui-panel-dismiss-open {
+      left: 15em;
+      right: -15em;
+    }
+
+    .ui-panel-animate.ui-panel-content-wrap-position-left.ui-panel-content-wrap-open.ui-panel-content-wrap-display-reveal {
+      left: 0;
+      right: 0;
+      -webkit-transform: translate3d(15em, 0, 0);
+      -moz-transform: translate3d(15em, 0, 0);
+      transform: translate3d(15em, 0, 0);
+    }
+
+    /* Combined listview collapsible menu. */
+    /* Unset negative margin bottom on the listviews. */
+    #nav .ui-panel-inner>.ui-listview {
+      margin-bottom: 0;
+    }
+
+    /* Unset top and bottom margin on collapsible set. */
+    #nav .ui-collapsible-set {
+      margin: 0;
+    }
+
+    /* The first collapsible contains the collapsible set. Make it fit exactly in the collapsible content. */
+    #nav .ui-panel-inner>.ui-collapsible>.ui-collapsible-content {
+      padding-top: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    /* Remove border top if a collapsible comes after a listview. */
+    #nav .ui-panel-inner>.ui-collapsible>.ui-collapsible-heading .ui-btn,
+    #nav .ui-collapsible.ui-first-child .ui-collapsible-heading .ui-btn {
+      border-top: none;
+    }
+
+    /* Give the first collapsible heading the same padding, i.e. same height, as the list items. */
+    #nav .ui-collapsible-heading .ui-btn-inner {
+      padding: .7em 40px .7em 15px;
+    }
+
+    /* Give the other collapsible headings the same padding and font-size as the list divider. */
+    #nav .ui-collapsible-set .ui-collapsible-heading .ui-btn-inner {
+      padding: .5em 40px .5em 15px;
+      font-size: 14px;
+    }
+
+    /* Styling of the close button in both panels. */
+    .ui-panel-inner>.ui-listview .ui-first-child {
+      background: #eee;
+    }
+
+    /* Reveal menu shadow on top of the list items */
+    .ui-panel-display-reveal {
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+    }
+
+    .ui-panel-content-wrap-position-left {
+      -webkit-box-shadow: -5px 0px 5px rgba(0, 0, 0, .15);
+      -moz-box-shadow: -5px 0px 5px rgba(0, 0, 0, .15);
+      box-shadow: -5px 0px 5px rgba(0, 0, 0, .15);
+    }
+
+    .ui-panel.ui-panel-open {
+      position: fixed;
+    }
+
+    .ui-panel-inner {
+      position: absolute;
+      top: 1px;
+      left: 0;
+      right: 0;
+      bottom: 0px;
+      overflow: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    #committee ul li p {
+      white-space: normal
+    }
+
+    #gallary img {
+      width: 100%;
+    }
+
+    #registration table th {
+      border: solid 1px white;
+      height: 30px;
+      line-height: 33px;
+      background-color: rgb(218, 231, 210);
+      text-align: center;
+    }
+
+    #registration table td {
+      vertical-align: middle;
+    }
+
+    #registration table ._col1 {
+      background-color: rgb(215, 227, 238);
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .nav-btn {
+      width: 18px !important;
+      height: 18px !important;
+      padding: 9px;
+      border-radius: 9px !important;
+    }
+
+    .nav-btn::after {
+      background-size: 75% !important;
+      margin-top: -10px;
+      margin-left: 2px;
+    }
+  </style>
 </head>
+
 <body>
-<div data-role="page" id="home"><!--Page home-->
+  <div data-role="page" id="home">
+    <!--Page home-->
 
-  <div data-role="header" data-theme="b"  data-position="fixed" data-fullscreen="false">
-    <h1>CSDP 2021</h1>
-	<a href="#nav" data-role="button" class="ui-btn-right nav-btn" data-icon="bullets" ></a>
-  </div>
-
-  <div role="main" class="ui-content">
-   	<fieldset class="ui-corner-all" style="border:solid 1px #e7e7e7;padding:0.5em">
-      <legend><img src="../src/logo2d.png" alt="CSDP 2021"/></legend>
-      <b>3rd International Workshop on Cyber Security and Data Privacy</b><br/>
-	  <small>
-	    <b>Aug. 19 - Aug. 20 2021<br/>
-		   Virtual, China</b>
-	  </small>
-      <p>As the information technologies are adopted in our daily life, security and privacy become more and more important. The boundaries of cyber world and physical world are being changed, as well as the research topics of security and privacy. In order to solve the emerging problems of security and privacy, we need to bring intelligent and professional people together, which are with different backgrounds and from different organizations.</p>
-	  <p>The 3rd International Workshop on Cybersecurity and Data Privacy (CSDP) aims to provide a forum for people to discuss the problems, the challenges, the solutions and the envisions of security and privacy in the cyberspace.</p>
-    </fieldset>
-	<div data-role="collapsible" data-collapsed="false">
-      <h1>IMPORTANT DATES</h1>
-      <p><b>Conference:</b></p>
-      <p>&nbsp;&nbsp;08/19/2021</p>
-      <p>&nbsp;&nbsp;08/20/2021</p>
+    <div data-role="header" data-theme="b" data-position="fixed" data-fullscreen="false">
+      <h1>CSDP 2021</h1>
+      <a href="#nav" data-role="button" class="ui-btn-right nav-btn" data-icon="bullets"></a>
     </div>
-  <div data-role="collapsible" data-collapsed="false">
-      <h1>CONFERENCES</h1>
-      <p><b>Past Conferences:</b></p>
-      <p><a href="../CSDP2020/m/index.html"  title="CSDP2020">CSDP 2020</a></p>
-      <p><a href="../CSDP2019/m/index.html"  title="CSDP2019">CSDP 2019</a></p>
-  </div>
-  </div>
-  <div data-role="footer" data-theme="b">
-   <center>
-     <small>&copy; Copyright 2021  <a href="http://dacas.cn" target="_blank">DCS Center</a> - All rights reserved.<br/>Supported by <a href="https://cybersec.ustc.edu.cn/" target="_blank">School of Cyberspace Science and Technology, University of Science and Technology of China</a></small>
-   </center>
-  </div>
-</div><!--Page home-->
 
-<div data-role="page" id="committee"><!--Page committee-->
-  <div data-role="header" data-theme="b"  data-position="fixed" data-fullscreen="false">
-    <h1>Committee</h1>
-	<a href="#nav" class="ui-btn-right nav-btn" data-icon="bullets"></a>
+    <div role="main" class="ui-content">
+      <fieldset class="ui-corner-all" style="border:solid 1px #e7e7e7;padding:0.5em">
+        <legend><img src="../src/logo2d.png" alt="CSDP 2021" /></legend>
+        <b>3rd International Workshop on Cyber Security and Data Privacy</b><br />
+        <small>
+          <b>Aug. 19 - Aug. 20 2021<br />
+            Virtual, China</b>
+        </small>
+        <p>As the information technologies are adopted in our daily life, security and privacy become more and more
+          important. The boundaries of cyber world and physical world are being changed, as well as the research topics
+          of security and privacy. In order to solve the emerging problems of security and privacy, we need to bring
+          intelligent and professional people together, which are with different backgrounds and from different
+          organizations.</p>
+        <p>The 3rd International Workshop on Cybersecurity and Data Privacy (CSDP) aims to provide a forum for people to
+          discuss the problems, the challenges, the solutions and the envisions of security and privacy in the
+          cyberspace.</p>
+      </fieldset>
+      <div data-role="collapsible" data-collapsed="false">
+        <h1>IMPORTANT DATES</h1>
+        <p><b>Conference:</b></p>
+        <p>&nbsp;&nbsp;08/19/2021</p>
+        <p>&nbsp;&nbsp;08/20/2021</p>
+      </div>
+      <div data-role="collapsible" data-collapsed="false">
+        <h1>CONFERENCES</h1>
+        <p><b>Past Conferences:</b></p>
+        <p><a href="../CSDP2020/m/index.html" title="CSDP2020">CSDP 2020</a></p>
+        <p><a href="../CSDP2019/m/index.html" title="CSDP2019">CSDP 2019</a></p>
+      </div>
+    </div>
+    <div data-role="footer" data-theme="b">
+      <center>
+        <small>&copy; Copyright 2021 <a href="http://dacas.cn" target="_blank">DCS Center</a> - All rights
+          reserved.<br />Supported by <a href="https://cybersec.ustc.edu.cn/" target="_blank">School of Cyberspace
+            Science and Technology, University of Science and Technology of China</a></small>
+      </center>
+    </div>
   </div>
+  <!--Page home-->
 
-  <div role="main" class="ui-content">
-    <form class="ui-filterable">
-      <input id="filter_1" data-type="search">
-    </form>
-	<div data-role="collapsible" data-collapsed="false">
-	  <h2>Co-chairs</h2>
-      <ul data-role="listview" data-filter="true" data-input="#filter_1">
-        <li>
-	      <p><b>Jingqiang Lin</b>,
-          University of Science and Technology of China
-	  	  </p>
-	    </li>
-        <li>
-          <p><b>Juan Wang</b>,
-            Wuhan University, China
-          </p>
-	    </li>
+  <div data-role="page" id="committee">
+    <!--Page committee-->
+    <div data-role="header" data-theme="b" data-position="fixed" data-fullscreen="false">
+      <h1>Committee</h1>
+      <a href="#nav" class="ui-btn-right nav-btn" data-icon="bullets"></a>
+    </div>
+
+    <div role="main" class="ui-content">
+      <form class="ui-filterable">
+        <input id="filter_1" data-type="search">
+      </form>
+      <div data-role="collapsible" data-collapsed="false">
+        <h2>Co-chairs</h2>
+        <ul data-role="listview" data-filter="true" data-input="#filter_1">
+          <li>
+            <p><b>Jingqiang Lin</b>,
+              University of Science and Technology of China
+            </p>
+          </li>
+          <li>
+            <p><b>Juan Wang</b>,
+              Wuhan University, China
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div data-role="collapsible">
+        <h2>Technical Program Committee</h2>
+        <ul data-role="listview" data-filter="true" data-input="#filter_1">
+          <li>
+            <p><b>Kai Chen</b>,
+              Institute of Information Engineering, Chinese Academy of Sciences, PR China
+            </p>
+          </li>
+          <li>
+            <p><b>Shengzhi Zhang</b>,
+              Boston University, USA
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div data-role="collapsible">
+        <h2>Organization Committee</h2>
+        <ul data-role="listview" data-filter="true" data-input="#filter_1">
+          <li>
+            <p><b>Bo Luo</b>,
+              the University of Kansas, USA
+            </p>
+          </li>
+          <li>
+            <p><b>Jun Shao</b>,
+              Zhejiang Gongshang University, China
+            </p>
+          </li>
+          <li>
+            <p><b>Shengzhi Zhang</b>,
+              Boston University Metropolitan College , USA
+            </p>
+          </li>
+
+
+        </ul>
+      </div>
+    </div>
+    <div data-role="footer" data-theme="b">
+      <center>
+        <small>&copy; Copyright 2021 <a href="http://dacas.cn" target="_blank">DCS Center</a> - All rights
+          reserved.<br />Supported by <a href="https://www.ustc.edu.cn/" target="_blank">University of Science and
+            Technology of China</a></small>
+      </center>
+    </div>
+  </div>
+  <!--Page committee-->
+
+  <div data-role="page" id="speakers">
+    <!--Page speakers-->
+    <div data-role="header" data-theme="b" data-position="fixed" data-fullscreen="false">
+      <h1>Speakers</h1>
+      <a href="#nav" class="ui-btn-right nav-btn" data-icon="bullets"></a>
+    </div>
+
+    <div role="main" class="ui-content">
+      <form class="ui-filterable">
+        <input id="filter_2" data-type="search">
+      </form>
+      <ul id="speaker-list" data-role="listview" data-filter="true" data-input="#filter_2">
+        <li><a href="javascript:toSpeaker('Yu Chen')">Yu Chen</a></li>
+        <li><a href="javascript:toSpeaker('Le Guan')">Le Guan</a></li>
+        <li><a href="javascript:toSpeaker('Hongxin Hu')">Hongxin Hu</a></li>
+        <li><a href="javascript:toSpeaker('Xinyi Huang')">Xinyi Huang</a></li>
+        <li><a href="javascript:toSpeaker('Shouling Ji')">Shouling Ji</a></li>
+        <li><a href="javascript:toSpeaker('Ding Wang')">Ding Wang</a></li>
+        <li><a href="javascript:toSpeaker('Jun Xu')">Jun Xu</a></li>
+        <li><a href="javascript:toSpeaker('Lingyun Ying')">Lingyun Ying'</a></li>
+        <li><a href="javascript:toSpeaker('Chao Zhang')">Chao Zhang</a></li>
+        <li><a href="javascript:toSpeaker('Fangyu Zheng')">Fangyu Zheng</a></li>
       </ul>
-	</div>
-	<div data-role="collapsible">
-	  <h2>Technical Program Committee</h2>
-      <ul data-role="listview" data-filter="true" data-input="#filter_1">
-        <li>
-          <p><b>Kai Chen</b>,
-          Institute of Information Engineering, Chinese Academy of Sciences, PR China
-          </p>
-	    </li>
-		<li>
-          <p><b>Shengzhi Zhang</b>,
-          Boston University, USA
-          </p>
-	    </li>
-	  </ul>
-	</div>
-	<div data-role="collapsible">
-	  <h2>Organization Committee</h2>
-	  <ul data-role="listview" data-filter="true" data-input="#filter_1">
-        <li>
-          <p><b>Bo Luo</b>,
-            the University of Kansas, USA
-          </p>
-          </li>
-        <li>
-          <p><b>Jun Shao</b>,
-            Zhejiang Gongshang University, China
-          </p>
-          </li>
-        <li>
-          <p><b>Shengzhi Zhang</b>,
-            Boston University Metropolitan College , USA
-          </p>
-        </li>
-		
-         
-    </ul>
-	</div>
+    </div>
+    <div data-role="footer" data-theme="b">
+      <center>
+        <small>&copy; Copyright 2021 <a href="http://dacas.cn" target="_blank">DCS Center</a> - All rights
+          reserved.<br />Supported by <a href="https://www.ustc.edu.cn/" target="_blank">University of Science and
+            Technology of China</a></small>
+      </center>
+    </div>
   </div>
-  <div data-role="footer" data-theme="b">
-   <center>
-     <small>&copy; Copyright 2021  <a href="http://dacas.cn" target="_blank">DCS Center</a> - All rights reserved.<br/>Supported by <a href="https://www.ustc.edu.cn/" target="_blank">University of Science and Technology of China</a></small>
-   </center>
-  </div>
-</div><!--Page committee-->
+  <!--Page speakers-->
 
-<div data-role="page" id="speakers"><!--Page speakers-->
-  <div data-role="header" data-theme="b"  data-position="fixed" data-fullscreen="false">
-    <h1>Speakers</h1>
-	<a href="#nav" class="ui-btn-right nav-btn" data-icon="bullets"></a>
-  </div>
+  <div data-role="page" id="speaker" class="details">
+    <!--Page speaker-->
+    <div data-role="header" data-theme="b" data-position="fixed" data-fullscreen="false">
+      <a href="#" data-icon="back" data-role="button" data-rel="back" class="nav-btn"></a>
+      <h1 id="speaker_name"></h1>
+    </div>
 
-  <div role="main" class="ui-content">
-    <form class="ui-filterable">
-      <input id="filter_2" data-type="search">
-    </form>
-    <ul id="speaker-list" data-role="listview" data-filter="true" data-input="#filter_2">
-      <li><a href="javascript:toSpeaker('Xinyi Huang')">Xinyi Huang</a></li>
-      <li><a href="javascript:toSpeaker('Yu Chen')">Yu Chen</a></li>
-      <li><a href="javascript:toSpeaker('Shouling Ji')">Shouling Ji</a></li>
-      <li><a href="javascript:toSpeaker('Fangyu Zheng')">Fangyu Zheng</a></li>
-      <li><a href="javascript:toSpeaker('Ding Wang')">Ding Wang</a></li>
-      <li><a href="javascript:toSpeaker('Le Guan')">Le Guan</a></li>
-    </ul>
+    <div role="main" class="ui-content">
+      <fieldset class="ui-corner-all" style="border:solid 1px #e7e7e7;padding:0.5em">
+        <legend><img id="avatar" alt="CSDP 2021" /></legend>
+        <span id="bio"></span>
+      </fieldset>
+      <table data-role="table" data-mode="columntoggle:none" id="speech">
+        <thead>
+          <tr>
+            <th>
+              <center>Speech</center>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Title:</b>
+              <span id="title"></span>
+            </td>
+          </tr>
+          <tr>
+            <td><b>Abstract:</b>
+              <span id="abstract"></span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div data-role="footer" data-theme="b">
+      <center>
+        <small>&copy; Copyright 2021 <a href="http://dacas.cn" target="_blank">DCS Center</a> - All rights
+          reserved.<br />Supported by <a href="https://www.ustc.edu.cn/" target="_blank">University of Science and
+            Technology of China</a></small>
+      </center>
+    </div>
   </div>
-  <div data-role="footer" data-theme="b">
-   <center>
-<small>&copy; Copyright 2021  <a href="http://dacas.cn" target="_blank">DCS Center</a> - All rights reserved.<br/>Supported by <a href="https://www.ustc.edu.cn/" target="_blank">University of Science and Technology of China</a></small>   </center>
-  </div>
-</div><!--Page speakers-->
+  <!--Page speaker-->
 
-<div data-role="page" id="speaker" class="details"><!--Page speaker-->
-  <div data-role="header" data-theme="b"  data-position="fixed" data-fullscreen="false">
-    <a href="#" data-icon="back" data-role="button" data-rel="back" class="nav-btn"></a>
-	<h1 id="speaker_name"></h1>
-  </div>
+  <div data-role="page" id="program">
+    <!--Page hotel-->
+    <div data-role="header" data-theme="b" data-position="fixed" data-fullscreen="false">
+      <h1>program</h1>
+      <a href="#nav" class="ui-btn-right nav-btn" data-icon="bullets"></a>
+    </div>
 
-  <div role="main" class="ui-content">
-    <fieldset class="ui-corner-all" style="border:solid 1px #e7e7e7;padding:0.5em">
-      <legend><img id="avatar" alt="CSDP 2021"/></legend>
-      <span id="bio"></span>
-    </fieldset>
-	<table data-role="table" data-mode="columntoggle:none" id="speech">
-      <thead>
-        <tr>
-          <th><center>Speech</center></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><b>Title:</b>
-		    <span id="title"></span>
-		  </td>
-        </tr>
-        <tr>
-          <td><b>Abstract:</b>
-		    <span id="abstract"></span>
-		  </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div data-role="footer" data-theme="b">
-   <center>
-<small>&copy; Copyright 2021  <a href="http://dacas.cn" target="_blank">DCS Center</a> - All rights reserved.<br/>Supported by <a href="https://www.ustc.edu.cn/" target="_blank">University of Science and Technology of China</a></small>   </center></div>
-</div><!--Page speaker-->
+    <div role="main" class="ui-content">
+      <p>3rd International Workshop on Cyber Security and Data Privacy 2021 will take place virtually take place
+        virtually from August 19 to August 20. </p>
+      You can find the schedule<a href="../registration.html">here</a>
 
-<div data-role="page" id="program"><!--Page hotel-->
-  <div data-role="header" data-theme="b"  data-position="fixed" data-fullscreen="false">
-    <h1>program</h1>
-	<a href="#nav" class="ui-btn-right nav-btn" data-icon="bullets"></a>
+    </div>
+    <div data-role="footer" data-theme="b">
+      <center>
+        <small>&copy; Copyright 2021 <a href="http://dacas.cn" target="_blank">DCS Center</a> - All rights
+          reserved.<br />Supported by <a href="https://www.ustc.edu.cn/" target="_blank">University of Science and
+            Technology of China</a></small>
+      </center>
+    </div>
   </div>
+  <!--Page hotel-->
 
-  <div role="main" class="ui-content">
-    <p>3rd International Workshop on Cyber Security and Data Privacy 2021 will take place virtually take place virtually from August 19 to August 20. </p>
-	
-  </div>
-  <div data-role="footer" data-theme="b">
-   <center>
-<small>&copy; Copyright 2021  <a href="http://dacas.cn" target="_blank">DCS Center</a> - All rights reserved.<br/>Supported by <a href="https://www.ustc.edu.cn/" target="_blank">University of Science and Technology of China</a></small>   </center>
-  </div>
-</div><!--Page hotel-->
-
-<div data-role="page" id="registration"><!--Page registration-->
-  <div data-role="header" data-theme="b"  data-position="fixed" data-fullscreen="false">
-    <h1>Registration</h1>
-	<a href="#nav" class="ui-btn-right nav-btn" data-icon="bullets"></a>
-  </div>
+  <div data-role="page" id="registration">
+    <!--Page registration-->
+    <div data-role="header" data-theme="b" data-position="fixed" data-fullscreen="false">
+      <h1>Registration</h1>
+      <a href="#nav" class="ui-btn-right nav-btn" data-icon="bullets"></a>
+    </div>
 
 
-  <div data-role="footer" data-theme="b">
-   <center>
-<small>&copy; Copyright 2021  <a href="http://dacas.cn" target="_blank">DCS Center</a> - All rights reserved.<br/>Supported by <a href="https://www.ustc.edu.cn/" target="_blank">University of Science and Technology of China</a></small>   </center>
+    <div data-role="footer" data-theme="b">
+      <center>
+        <small>&copy; Copyright 2021 <a href="http://dacas.cn" target="_blank">DCS Center</a> - All rights
+          reserved.<br />Supported by <a href="https://www.ustc.edu.cn/" target="_blank">University of Science and
+            Technology of China</a></small>
+      </center>
+    </div>
   </div>
-</div><!--Page registration-->
+  <!--Page registration-->
 
-<div data-role="panel" id="nav" data-position="left" data-display="push" data-theme="a"><!--nav-->
-  <!--div class="ui-panel-inner"-->
+  <div data-role="panel" id="nav" data-position="left" data-display="push" data-theme="a">
+    <!--nav-->
+    <!--div class="ui-panel-inner"-->
     <h1>Navigation</h1>
     <ul data-role="listview">
-  	  <li data-icon="false"><a href="#home" data-rel="close">Home</a></li>
-  	  <li data-icon="false"><a href="#committee" data-rel="close">Committee</a></li>
-  	  <li data-icon="false"><a href="#speakers" data-rel="close">Speakers</a></li>
-  	  <li data-icon="false"><a href="#program" data-rel="close">Program</a></li>
-  	  <li data-icon="false"><a href="#registration" data-rel="close">Registration</a></li>
-  	  <li data-icon="false"><a href="#" data-rel="close">Close</a></li>
+      <li data-icon="false"><a href="#home" data-rel="close">Home</a></li>
+      <li data-icon="false"><a href="#committee" data-rel="close">Committee</a></li>
+      <li data-icon="false"><a href="#speakers" data-rel="close">Speakers</a></li>
+      <li data-icon="false"><a href="#program" data-rel="close">Program</a></li>
+      <li data-icon="false"><a href="#registration" data-rel="close">Registration</a></li>
+      <li data-icon="false"><a href="#" data-rel="close">Close</a></li>
     </ul>
-  <!--/div-->
-</div><!--nav-->
+    <!--/div-->
+  </div>
+  <!--nav-->
 
 </body>
+
 </html>
