@@ -65,8 +65,8 @@
 
     speaker_inf['Ding Wang'] = {
       "bio": "<strong>汪定</strong>，南开大学教授，博士生导师，密码科学与技术系主任，天津市网络与数据安全技术重点实验室副主任，研究方向为数字身份安全。近年来以第一作者（或通讯作者）在IEEE S&P、ACM CCS、USENIX Security、NDSS和IEEE TDSC、IEEE TIFS等国内外刊物发表论文60余篇，被引用3300余次，H-index为27。主持国家重点研发计划课题、国家自然科学基金、装备预研、国家某部社研等项目10余项。担任CCF《技术动态》编委，CCF推荐期刊WCMC、IJISP、《计算机科学》、《电子与信息学报》等7个国内外期刊的编委/执行编委，获教育部自然科学一等奖（排名第2）、天津市科技进步二等奖（排名第4）、北大优博、CCF优博、ACM中国优博。2019年入选南开大学“百青计划”, 2020年入选天津市青年科技优秀人才，2021年入选爱思唯尔“中国高被引学者”。",
-      "tit": "理解比特币脑钱包口令",
-      "abs": "脑钱包是一种简便的比特币存储方式，它允许用户利用可记忆的口令来创建比特币钱包。这样，用户避免了将比特币钱包的私钥存储在硬件或纸媒上。但是，这也带来自了新的安全性问题：攻击者可以通过扫描比特币区块链上公开的地址，对脑钱包实施离线口令攻击。为测量这一威胁程度，我们基于2011年到2021年破解的1760个脑钱包口令样本，对脑钱包口令进行了迄今为止最大规模的特征分析和安全性研究。结果显示， 2015年8月发生的脑钱包破解软件“brainflayer”开源事件对脑钱包造成了巨大的影响：脑钱包的使用频率下降，但脑钱包口令的平均强度有了显著提高。在2015年8月之前，脑钱包的口令强度与钱包内比特币的价值之间存在正相关性，此后这种关系便不复存在。在口令语义方面，脑钱包与其他类型金融账户（如网银）、以及非金融账户相比，没有显著的差异。不过，用户在设置金融账户口令时，更倾向于使用字母和数字相混合的长口令，较少使用单一的长数字串。最后，我们给出了关于如何设置脑钱包口令的若干建议。"
+      "tit": "如何攻击和生成诱饵口令",
+      "abs": "近年来，大批的知名网站（如Yahoo, Dropbox, Poshmark, Quora, 163，万豪）发生了用户口令文件泄露事件。更为严重的是，这些泄露往往发生了数月甚至数年后才被网站发现，才提醒用户更新口令，然而为时已晚。比如，Nitro PDF在2020年10月泄露了7700用户口令和各类个人身份信息，在2021年1月才发现，这给了攻击者充足的利用时间。诱饵口令（Honeywords）技术是检测口令文件泄露的一种十分有前景的技术，由图灵奖得主 Rivest 和 Juels在ACM CCS’13 上首次提出。本研究发现，他们给出的4个主要 honeywords 生成方法均存在严重安全缺陷，且此类启发式方法无法简单修补；进一步提出一个honeywords 攻击理论体系，成功解决“给定攻击能力，攻击者如何进行最优攻击”这一公开问题；反过来，攻击者的最优攻击方法可被用来设计最优 honeywords 生成方法，成功摆脱启发式设计。本研究将使honeywords生成方法的设计和评估从艺术走向科学，为及时检测口令文件泄露提供理论和方法支撑。"
     };
 
 
@@ -90,17 +90,23 @@
     };
 
 
-    speaker_inf['Lingyun Ying'] = {
-      "bio": "<strong>应凌云</strong>，博士，奇安信集团星图实验室负责人。毕业于中国科学院研究生院信息安全国家重点实验室，主要从事恶意代码分析、网络攻击检测相关技术研究与产品研发工作，发表论文20多篇，出版合著2部，主持国家自然科学基金、国家发改委信息安全专项等各类国家级科研项目10多项，申请技术发明专利21项，参与国际标准提案2项、国家行业标准编制4项，先后荣获中国通信学会科学技术奖一等奖、北京市科学技术奖二等奖、中国电力技术发明奖三等奖等奖项荣誉。",
-      "tit": "基于软件空间测绘的软件供应链安全分析",
-      "abs": "随着软件供应链攻击案例不断发生，软件供应链安全日益受到重视，但如何分析、监测和保护复杂和漫长的软件供应链，目前学术界和工业界都还没有很好的方法。在本次报告中，我们将分享奇安信技术研究院在软件供应链安全研究和实践方面的探索。我们从软件制成品环节入手，以软件交付物为对象，提出了软件空间测绘的概念，通过软件静态和动态分析，持续构建了规模庞大的软件空间测绘数据库，通过代码特征、动态行为和数据关联，发现了多种不同平台系统和开发生态上的大量供应链安全相关问题。"
-    };
+    // speaker_inf['Lingyun Ying'] = {
+    //   "bio": "<strong>应凌云</strong>，博士，奇安信集团星图实验室负责人。毕业于中国科学院研究生院信息安全国家重点实验室，主要从事恶意代码分析、网络攻击检测相关技术研究与产品研发工作，发表论文20多篇，出版合著2部，主持国家自然科学基金、国家发改委信息安全专项等各类国家级科研项目10多项，申请技术发明专利21项，参与国际标准提案2项、国家行业标准编制4项，先后荣获中国通信学会科学技术奖一等奖、北京市科学技术奖二等奖、中国电力技术发明奖三等奖等奖项荣誉。",
+    //   "tit": "基于软件空间测绘的软件供应链安全分析",
+    //   "abs": "随着软件供应链攻击案例不断发生，软件供应链安全日益受到重视，但如何分析、监测和保护复杂和漫长的软件供应链，目前学术界和工业界都还没有很好的方法。在本次报告中，我们将分享奇安信技术研究院在软件供应链安全研究和实践方面的探索。我们从软件制成品环节入手，以软件交付物为对象，提出了软件空间测绘的概念，通过软件静态和动态分析，持续构建了规模庞大的软件空间测绘数据库，通过代码特征、动态行为和数据关联，发现了多种不同平台系统和开发生态上的大量供应链安全相关问题。"
+    // };
 
 
     speaker_inf['Jun Xu'] = {
       "bio": "<strong>Jun Xu </strong> is currently an Assistant Professor in the Department of Computer Science at Stevens Institute of Technology. He received his Ph.D. degree from Penn State University in 2018. His research focuses on software security and system security. His goal is to secure computing systems by neutralizing the risk of vulnerabilities in the software stack. His research has discovered hundreds of software vulnerabilities and led to many papers published in top-tier computer security conferences, including IEEE S&P, ACM CCS, USENIX Security, and Blackhat. He is a recipient of CCS Outstanding Paper Award 2018, Penn State Alumni Dissertation Award, and RSAC Security Scholarship.",
       "tit": "The Past, the Present, and the Future of Binary Analysis",
       "abs": "Binary analysis is a foundational technique to improve the security of legacy code. Binary analysis consits of a broad spectrum of techniques, ranging from low-level disassembly to high level semantic understanding. It has also been applied to various security applications, such as vulnerability finding and malware analysis. In this talk, I will try to give an introductionary overview of binary analysis and its applications.I will explain the underlying techniques of binary analysis from different levels, followed by a summary of the main lines of applications in security.After that, I would like to share my thoughts about the remaining challenges of binary analysis, the new problems, and the future directions."
+    };
+
+    speaker_inf['Qinsheng Hou'] = {
+      "bio": "<strong>侯勤胜</strong>，清华大学-奇安信联合研究中心研究员。主要研究方向为Android系统与软件安全、软件供应链安全、IoT软件安全性分析及沙箱技术。相关研究工作在Usenix Security和AsiaCCS会议上发表，授权发明专利一项，获得GeekPwn 2020新基建安全大赛优胜奖。",
+      "tit": "Android固件生态的大规模安全测量",
+      "abs": "在这项工作中，我们对Android固件生态系统的安全性进行了大规模的综合测量。我们的研究基于来自100多个供应商的数千个固件映像和几百个相关的CVE。为了自动化完成分析，我们设计了一个分析框架来完成ROM爬取、ROM解析、补丁分析和应用分析。通过海量数据分析和案例探索，我们得到了一些有意义的发现。"
     };
 
 
@@ -409,11 +415,12 @@
         <li><a href="javascript:toSpeaker('Yu Chen')">Yu Chen</a></li>
         <li><a href="javascript:toSpeaker('Le Guan')">Le Guan</a></li>
         <li><a href="javascript:toSpeaker('Hongxin Hu')">Hongxin Hu</a></li>
+        <li><a href="javascript:toSpeaker('Qinsheng Hou')">Qinsheng Hou</a></li>
         <li><a href="javascript:toSpeaker('Xinyi Huang')">Xinyi Huang</a></li>
         <li><a href="javascript:toSpeaker('Shouling Ji')">Shouling Ji</a></li>
         <li><a href="javascript:toSpeaker('Ding Wang')">Ding Wang</a></li>
         <li><a href="javascript:toSpeaker('Jun Xu')">Jun Xu</a></li>
-        <li><a href="javascript:toSpeaker('Lingyun Ying')">Lingyun Ying</a></li>
+        <!-- <li><a href="javascript:toSpeaker('Lingyun Ying')">Lingyun Ying</a></li> -->
         <li><a href="javascript:toSpeaker('Chao Zhang')">Chao Zhang</a></li>
         <li><a href="javascript:toSpeaker('Fangyu Zheng')">Fangyu Zheng</a></li>
       </ul>
@@ -511,32 +518,20 @@
       <table data-role="table" data-mode="columntoggle:none" class="ui-corner-all"
         style="border:solid 1px #e7e7e7;padding:0.5em">
         <tr>
+          <th>
+            08/19/21 &nbsp & &nbsp 08/20/21
+          </th>
+        </tr>
+        <tr>
           <td>
-            腾讯会议<br>
+            会议主题：3rd International Workshop on Cyber Security and Data Privacy<br>
             <br>
-            会议时间 2020/7/17 8:30<br>
+            会议时间：2021/08/19 08:00-2021/08/20 08:00 (GMT+08:00) 中国标准时间 - 北京<br>
             <br>
             点击链接入会，或添加至会议列表：<br>
-            <a href="https://meeting.tencent.com/s/Onccp2AhLunh">
-              https://meeting.tencent.com/s/Onccp2AhLunh
-            </a>
+            https://meeting.tencent.com/dm/n3d8YrrpxPH8<br>
             <br>
-            <br>
-            会议 ID: 799 481 766<br>
-            <br>
-            会议直播:<br>
-            <a href="https://meeting.tencent.com/l/rcrvVBxDLDJR">
-              https://meeting.tencent.com/l/rcrvVBxDLDJR
-            </a>
-            <br>
-            <br>
-            手机一键拨号入<br>
-            +8675536550000,799481766# (中国大陆)<br>
-            +852300188982,799481766# (中国香港)<br>
-            <br>
-            根据您的位置拨号<br>
-            +8675536550000 (中国大陆)<br>
-            +85230018898 (中国香港)<br>
+            会议 ID：381 873 961<br>
           </td>
         </tr>
       </table>
