@@ -363,27 +363,29 @@ h1, h2, h3{
 }
 
 #hosts, #supports{
-  width:48%;
-  float:left;
+  width:70%;
+  float:center;
+  padding:0 5px;
+  /*border:solid 1px #333;*/
+  line-height:1.3em;
+  vertical-align:top;
+}
+
+#hosts{
+  text-align:center;
+}
+
+#supports div{
+  width:80%;
   padding:0 5px;
   /*border:solid 1px #333;*/
   line-height:1.3em;
 }
 
-#hosts{
-  text-align:right;
-  border-right:solid 0.5px #777;
+#supports img{ 
+  width:70%; 
+  height:auto; 
+  vertical-align:middle;
 }
 
-#supports{
-  text-align:left;
-  border-left:solid 0.5px #ddd;
-}
 
-#supports div{
-  width:100px;float:left;
-}
-
-#supports img{
-  height:70px;
-}
