@@ -288,7 +288,7 @@
 										<td class="_bio">
 											<!--Dr. <strong>Kai Chen</strong>
 				  is an Professor in .-->
-											<strong>黄欣沂</strong>，福建师范大学计算机与网络空间安全学院教授，博士生导师，
+											<strong>黄欣沂</strong>, 福建师范大学计算机与网络空间安全学院教授，博士生导师，
 											长期从事公钥密码研究，研究工作获教育部自然科学奖一等奖（第3完成人）；
 											担任中国密码学会理事、《中国科学：信息科学》青年编委，AsiaCCS2016等学术会议主席；
 											入选教育部青年长江学者和福建省“百人计划”，主持国家自然科学基金优青项目和重点项目。
@@ -331,8 +331,7 @@
 													<img src="./src/avatar/ShoulingJi.jpeg" alt="Ji Shouling" />
 												</td>
 												<td class="_bio">
-													<strong>纪守领</strong>,
-													浙江大学“百人计划”研究员、
+													<strong>纪守领</strong>, 浙江大学“百人计划”研究员、
 													博士生导师、浙江大学滨江研究院国产信创研究中心副主任，
 													获佐治亚理工学院电子与计算机工程博士学位、
 													佐治亚州立大学计算机科学博士学位，入选国家和省部级人才计划。
@@ -394,6 +393,73 @@
 													Our research can shed light on the hidden privacy risks of VFL and
 													pave the
 													way for new research directions towards more secure VFL.
+											</tr>
+										</table>
+
+
+										<table>
+											<tr>
+												<th colspan="2">Zhiqiang Lin</th>
+												<!--th><span class="fold" title="details">+</span></th-->
+											</tr>
+											<tr>
+												<td class="avatar">
+													<img src="./src/avatar/ZhiqiangLin.jpeg" alt="Zhiqiang Lin" />
+												</td>
+												<td class="_bio">
+													<strong>Dr. Zhiqiang Lin</strong> is Professor of Computer Science
+													and Engineering at The Ohio State University (OSU).
+													His research interest lies in
+													software security and trusted computing (particularly trusted
+													execution environments),
+													with an emphasis on developing
+													automated program analysis (e.g., binary analysis and reverse
+													engineering techniques),
+													system abstractions, and tools,
+													and applying them for securing both the application programs
+													including mobile apps and the underlying systems software
+													such as OS kernels and hypervisors. He is a recipient of NSF CAREER
+													award, AFOSR Young Investigator award, and Faculty
+													Research Awards from Vmware and Amazon.
+													</p>
+												</td>
+											</tr>
+											<tr>
+												<td colspan="2" class="_title">
+													<strong>Title: </strong>
+													SelectiveTaint: Efficient Data Flow Tracking With Static Binary
+													Rewriting
+												</td>
+											</tr>
+											<tr>
+												<td colspan="2" class="_abstract">
+													<strong>Abstract: </strong>
+													Taint analysis has been widely used in many security applications
+													such as exploit detection, information flow tracking,
+													malware analysis, and protocol reverse engineering. State-of-the-art
+													taint analysis tools are usually built atop dynamic
+													binary instrumentation, which instruments at every possible
+													instruction, and rely on runtime information to decide
+													whether a particular instruction involves taint or not, thereby
+													usually having high performance overhead.</p>
+
+													In this talk, Dr. Lin is going to talk about SelectiveTaint, an open
+													source, efficient selective taint analysis
+													framework for binary executables. The key idea is to selectively
+													instrument the instructions involving taint analysis
+													using static binary rewriting instead of dynamic binary
+													instrumentation. At a high level, SelectiveTaint statically
+													scans taint sources of interest in the binary code, leverages value
+													set analysis to conservatively determine whether an
+													instruction operand needs to be tainted or not, and then selectively
+													taints the instructions of interest. SelectiveTaint
+													has been evaluated with a set of binary programs including coreutils
+													(focusing on file I/O) and network daemon programs
+													(focusing on network I/O). The evaluation results show that the
+													binaries statically instrumented by SelectiveTaint has
+													superior performance compared to the state-of-the-art dynamic taint
+													analysis frameworks (e.g., 1.7x faster than that of
+													libdft).
 											</tr>
 										</table>
 

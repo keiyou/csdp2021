@@ -109,6 +109,12 @@
       "abs": "在这项工作中，我们对Android固件生态系统的安全性进行了大规模的综合测量。我们的研究基于来自100多个供应商的数千个固件映像和几百个相关的CVE。为了自动化完成分析，我们设计了一个分析框架来完成ROM爬取、ROM解析、补丁分析和应用分析。通过海量数据分析和案例探索，我们得到了一些有意义的发现。"
     };
 
+    speaker_inf['Zhiqiang Lin'] = {
+      "bio": "<strong>Dr. Zhiqiang Lin</strong> is Professor of Computer Science and Engineering at The Ohio State University (OSU). His research interest lies in software security and trusted computing (particularly trusted execution environments), with an emphasis on developing automated program analysis (e.g., binary analysis and reverse engineering techniques), system abstractions, and tools, and applying them for securing both the application programs including mobile apps and the underlying systems software such as OS kernels and hypervisors.  He is a recipient of NSF CAREER award, AFOSR Young Investigator award, and Faculty Research Awards from Vmware and Amazon.",
+      "tit": "SelectiveTaint: Efficient Data Flow Tracking With Static Binary Rewriting",
+      "abs": "Taint analysis has been widely used in many security applications such as exploit detection, information flow tracking, malware analysis, and protocol reverse engineering. State-of-the-art taint analysis tools are usually built atop dynamic binary instrumentation, which instruments at every possible instruction, and rely on runtime information to decide whether a particular instruction involves taint or not, thereby usually having high performance overhead. In this talk, Dr.Lin is going to talk about SelectiveTaint, an open source, efficient selective taint analysis framework for binary executables.The key idea is to selectively instrument the instructions involving taint analysis using static binary rewriting instead of dynamic binary instrumentation.At a high level, SelectiveTaint statically scans taint sources of interest in the binary code, leverages value set analysis to conservatively determine whether an instruction operand needs to be tainted or not, and then selectively taints the instructions of interest.SelectiveTaint has been evaluated with a set of binary programs including coreutils(focusing on file I/ O) and network daemon programs(focusing on network I / O).The evaluation results show that the binaries statically instrumented by SelectiveTaint has superior performance compared to the state - of - the - art dynamic taint analysis frameworks(e.g., 1.7x faster than that of libdft)."
+    };
+
 
     function toSpeaker(name) {
       let detail = speaker_inf[name];
@@ -418,6 +424,7 @@
         <li><a href="javascript:toSpeaker('Qinsheng Hou')">Qinsheng Hou</a></li>
         <li><a href="javascript:toSpeaker('Xinyi Huang')">Xinyi Huang</a></li>
         <li><a href="javascript:toSpeaker('Shouling Ji')">Shouling Ji</a></li>
+        <li><a href="javascript:toSpeaker('Zhiqiang Lin')">Zhiqiang Lin</a></li>
         <li><a href="javascript:toSpeaker('Ding Wang')">Ding Wang</a></li>
         <li><a href="javascript:toSpeaker('Jun Xu')">Jun Xu</a></li>
         <!-- <li><a href="javascript:toSpeaker('Lingyun Ying')">Lingyun Ying</a></li> -->
@@ -529,7 +536,7 @@
             会议时间：2021/08/19 08:00-2021/08/20 08:00 (GMT+08:00) 中国标准时间 - 北京<br>
             <br>
             点击链接入会，或添加至会议列表：<br>
-            https://meeting.tencent.com/dm/n3d8YrrpxPH8<br>
+            <a href="https://meeting.tencent.com/dm/n3d8YrrpxPH8">https://meeting.tencent.com/dm/n3d8YrrpxPH8</a><br>
             <br>
             会议 ID：381 873 961<br>
           </td>
