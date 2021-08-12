@@ -1,11 +1,11 @@
 ﻿html, body{margin:0; padding:0;height:100%;font-family: Oswald,Helvetica,sans-serif;}
 body{
-  background-image:url('../src/hef_bg.jpg');
+  background-image:url('../src/ustc_bg.jpeg');
   background-attachment:fixed;
   background-repeat:no-repeat;
   background-size:cover;
   -moz-background-size:100%;
-  background-position-x: 100%;
+  background-position-x:100%;
 }
 #container{
   margin:0 auto;
